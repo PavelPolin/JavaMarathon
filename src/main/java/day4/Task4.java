@@ -11,19 +11,22 @@ public class Task4 {
         int sum = 0;
         int maxSum = 0;
         int index = 0;
-        for (int i = 0; i < 3; i++) {
-            sum = sum + array[i];
-        }
-        maxSum = sum;
-        for (int i = 3; i < array.length; i++) {
-            sum = sum + array[i] - array[(i - 3)];
-            if (sum > maxSum) {
+        for (int i = 0; i < array.length; i++) {
+            if (i < 3)
+                sum = sum + array[i];
+            if ( i == 2)
                 maxSum = sum;
-                index = i - 2;
+            if (i > 2) {
+                sum = sum + array[i] - array[(i - 3)];
+                if (sum > maxSum) {
+                    maxSum = sum;
+                    index = i - 2;
+                }
             }
         }
         String intArrayString = Arrays.toString(array);
         System.out.println(intArrayString);
         System.out.print(maxSum);
+        System.out.println(index);
     }
 }
