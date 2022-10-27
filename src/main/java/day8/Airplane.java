@@ -1,20 +1,4 @@
-package day6;
-
-public class Task2 {
-    public static void main(String[] args) {
-        Airplane boing = new Airplane("The Boeing Company", 1980, 11.15, 27.700);
-        boing.info();
-        System.out.println();
-        boing.setYear(1985);
-        boing.setLength(11.25);
-        boing.info();
-        System.out.println();
-        boing.fillUp(123);
-        boing.fillUp(566.5);
-        boing.info();
-
-    }
-}
+package day8;
 
 class Airplane {
     private String manufacturer;
@@ -61,5 +45,9 @@ class Airplane {
     }
     public void fillUp(double n){
         fuel += n;
+    }
+    public String toString(){
+        String info = "Изготовитель: " + manufacturer + "\n" + "Год выпуска: " + year + "\n" + "Длина: " + length + "\n" + "Вес: " + weight + "\n" + "Количество топлива в баке: " + fuel;
+        return info;
     }
 }
